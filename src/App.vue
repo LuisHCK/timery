@@ -60,7 +60,7 @@ body {
       position: relative;
       background-color: #f8f8f8;
       box-shadow: -2px 2px 18px 1px rgba(0, 0, 0, 0.23);
-      min-height: 100vh;
+      min-height: 90vh;
       padding: 8px;
       .task-list {
         padding-top: 10px;

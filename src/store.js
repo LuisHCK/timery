@@ -23,9 +23,17 @@ export default new Vuex.Store({
     [types.UPDATE_TASK](state, task) {
       const index = state.tasks.indexOf(task);
       if (index > -1) state.tasks[index] = task;
+    },
+
+    setTasks(state, tasks) {
+      state.tasks = tasks;
     }
   },
-  actions: {},
+  actions: {
+    [types.CLEAR_ALL_TASKS](context) {
+      context.commit("setTasks", []);
+    }
+  },
 
   plugins: [
     createPersistedState({

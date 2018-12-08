@@ -1,8 +1,13 @@
 <template>
   <div>
-    <button class="btn primary" v-if="!showForm" @click="showForm=!showForm">
-      <strong>+</strong> Add Task
-    </button>
+    <div class="buttons">
+      <button class="btn primary" v-if="!showForm" @click="showForm=!showForm">
+        <strong>+</strong> Add Task
+      </button>
+      <button class="btn danger" v-if="!showForm" @click="clearAllTasks()">
+        Clear all tasks
+      </button>
+    </div>
 
     <div class="modal-form" v-if="showForm">
       <form @submit.prevent="submit()">
@@ -38,16 +43,20 @@ export default {
         this.showForm = false;
         this.showToast("Task created!");
       } else {
-        this.showToast("Form invalid", 'bubble');
+        this.showToast("Form invalid", "bubble");
       }
     },
 
-    showToast(text, theme='outline') {
+    showToast(text, theme = "outline") {
       this.$toasted.show(text, {
         theme: theme,
         position: "top-right",
         duration: 5000
       });
+    },
+
+    clearAllTasks() {
+      this.$store.dispatch(types.CLEAR_ALL_TASKS)
     }
   }
 };
@@ -59,5 +68,9 @@ form {
     width: 100%;
     max-width: 100%;
   }
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
 }
 </style>

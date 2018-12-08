@@ -90,13 +90,13 @@ body {
     width: auto;
   }
   &.primary {
-    background-color: blue;
+    background-color: #1E88E5;
   }
   &.danger {
-    background-color: red;
+    background-color: #FF7043;
   }
   &.warning {
-    background-color: orange;
+    background-color: #FFA726;
   }
   &.link {
     color: #2c3e50;

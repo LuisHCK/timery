@@ -2,6 +2,9 @@
   <div id="app">
     <div class="app-container">
       <div class="app-body">
+        <a target="_blank" href="https://github.com/LuisHCK/timery" class="github-link">
+          <img :src="require('@/assets/github.svg')" alt="github">
+        </a>
         <h1>Today's tasks</h1>
         <div class="form-container">
           <task-form/>
@@ -54,12 +57,21 @@ body {
       padding-right: 20%;
     }
     .app-body {
+      position: relative;
       background-color: #f8f8f8;
       box-shadow: -2px 2px 18px 1px rgba(0, 0, 0, 0.23);
       min-height: 100vh;
       padding: 8px;
       .task-list {
         padding-top: 10px;
+      }
+      .github-link {
+        position: absolute;
+        right: 12px;
+        img {
+          height: 32px;
+          width: auto;
+        }
       }
     }
   }

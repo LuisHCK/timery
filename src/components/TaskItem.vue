@@ -97,8 +97,9 @@ export default {
 
 <style scoped lang="scss">
 .task {
+  transition: 0.3s;
   &:hover {
-    background-color: #fafafa;
+    background-color: #ffffff;
   }
   .container {
     display: flex;

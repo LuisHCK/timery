@@ -1,6 +1,6 @@
 # Tymery
 
-It's a simple to-do app that counts the time (in hours) it takes you to complete a task. I created this because in my work I must report the hours it took me to do a task, but I always forget it.
+It's a simple to-do app that counts the time (in hours) it takes you to complete a task. I created this because in my work I must report the hours it took me to do a task.
 
 ## Project setup
 ```

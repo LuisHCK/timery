@@ -4,10 +4,10 @@
       <div class="app-body">
         <tabs>
           <template slot="tasks">
-            <tasks />
+            <tasks/>
           </template>
           <template slot="pomodoros">
-            <pomodoros />
+            <pomodoros/>
           </template>
         </tabs>
         <footer>
@@ -20,9 +20,9 @@
 </template>
 
 <script>
-import Tabs from '@/components/Tabs.vue'
-import Tasks from '@/views/Tasks.vue'
-import Pomodoros from '@/views/Pomodoros.vue'
+import Tabs from "@/components/Tabs.vue";
+import Tasks from "@/views/Tasks.vue";
+import Pomodoros from "@/views/Pomodoros.vue";
 export default {
   name: "app",
 
@@ -85,13 +85,16 @@ body {
     width: auto;
   }
   &.primary {
-    background-color: #1E88E5;
+    background-color: #1e88e5;
+  }
+  &.success {
+    background-color: #1ed378;
   }
   &.danger {
-    background-color: #FF7043;
+    background-color: #ff7043;
   }
   &.warning {
-    background-color: #FFA726;
+    background-color: #ffa726;
   }
   &.link {
     color: #2c3e50;

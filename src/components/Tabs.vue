@@ -1,8 +1,8 @@
 <template>
 	<div class="tabs-container">
 		<div class="tab-buttons">
-			<button class="button-title" @click="currentTab=1">Tasks</button>
-			<button class="button-title" @click="currentTab=2">Pomodoro</button>
+			<button class="button-title btn primary" @click="currentTab=1">Tasks</button>
+			<button class="button-title btn primary" @click="currentTab=2">Pomodoro</button>
 		</div>
 		<div class="tab" v-show="currentTab == 1">
 			<div class="content">

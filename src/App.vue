@@ -2,41 +2,34 @@
   <div id="app">
     <div class="app-container">
       <div class="app-body">
-        <a target="_blank" href="https://github.com/LuisHCK/timery" class="github-link">
-          <img :src="require('@/assets/github.svg')" alt="github">
-        </a>
-        <h1>Today's tasks</h1>
-        <div class="form-container">
-          <task-form/>
-        </div>
-        <div class="task-list">
-          <task-item v-for="(task,i) in tasks" :key="'task'+i" :task="task"/>
-        </div>
+        <tabs>
+          <template slot="tasks">
+            <tasks />
+          </template>
+          <template slot="pomodoros">
+            <pomodoros />
+          </template>
+        </tabs>
+        <footer>
+          Created with ❤️ by
+          <a href="https://luishck.github.io">Luis J. Centeno</a>
+        </footer>
       </div>
-      <footer>
-        Created with ❤️ by
-        <a href="https://luishck.github.io">Luis J. Centeno</a>
-      </footer>
     </div>
   </div>
 </template>
 
 <script>
-import TaskItem from "./components/TaskItem.vue";
-import TaskForm from "./components/TaskForm.vue";
-
-import { mapState } from "vuex";
-
+import Tabs from '@/components/Tabs.vue'
+import Tasks from '@/views/Tasks.vue'
+import Pomodoros from '@/views/Pomodoros.vue'
 export default {
   name: "app",
 
   components: {
-    TaskItem,
-    TaskForm
-  },
-
-  computed: {
-    ...mapState(["tasks"])
+    Tabs,
+    Tasks,
+    Pomodoros
   }
 };
 </script>
@@ -61,9 +54,11 @@ body {
       background-color: #f8f8f8;
       box-shadow: -2px 2px 18px 1px rgba(0, 0, 0, 0.23);
       min-height: 90vh;
-      padding: 8px;
-      .task-list {
-        padding-top: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .page {
+        padding: 10px;
       }
       .github-link {
         position: absolute;
@@ -106,5 +101,6 @@ body {
 footer {
   text-align: center;
   background-color: #f8f8f8;
+  padding: 8px;
 }
 </style>
